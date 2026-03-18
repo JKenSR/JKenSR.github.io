@@ -22,33 +22,33 @@
     <ul class="nav-links">
         <li>
             <a href="#">
-                <i class='fas fa-th-large'></i>
-                <span class="link_name">Overview</span>
+                <i class='fas fa-user-tie'></i>
+                <span class="link_name">Perfil Profesional</span>
             </a>
         </li>
         <li>
             <a href="#">
-                <i class='fas fa-user-tie'></i>
-                <span class="link_name">Hire </span>
+                <i class='fas fa-code'></i>
+                <span class="link_name">Habilidades </span>
             </a>
         </li>
 
         <div class="divider"></div>
         <li>
             <a href="#">
-                <i class='fas fa-plus-circle'></i>
-                <span class="link_name">Add </span>
+                <i class='fas fa-project-diagram'></i>
+                <span class="link_name">Proyectos </span>
             </a>
         </li>
         <li>
             <a href="#">
-                <i class='fas fa-box'></i>
-                <span class="link_name">Neker</span>
+                <i class='fas fa-graduation-cap'></i>
+                <span class="link_name">Educación</span>
             </a>
         </li>
 
         <li class="toggle-btn" onclick="toggleSidebar()">
-            <i class='fas fa-chevron-right' id="btn"></i>
+            <i class='fas fa-chevron-up' id="btn"></i>
         </li>
     </ul>
 </nav>
@@ -106,12 +106,6 @@
         
         sidebar.classList.toggle("close");
 
-        sidebar.classList.toggle("open");
-        if(sidebar.classList.contains("open")){
-            btn.classList.replace("fa-chevron-right", "fa-chevron-left");
-        } else {
-            btn.classList.replace("fa-chevron-left", "fa-chevron-right");
-        }
         if(sidebar.classList.contains("close")){
             btn.classList.replace("fa-chevron-left", "fa-chevron-right");
         } else {

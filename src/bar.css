@@ -3,7 +3,7 @@ body {
   line-height: 1.6;
   max-width: 800px;
   margin: 0 auto;
-  padding: 100vh 20px 0;
+  padding: 80px 20px 0;
 }
 
 .video-background {
@@ -46,8 +46,9 @@ li a:hover {
 }
 
 :root {
-    --sidebar-width: 130px;
-    --sidebar-closed-width: 45px;
+    --sidebar-width: 100%;
+    --sidebar-closed-width: 40px;
+    --sidebar-height: 80px;
     --dark-bg: #1e1e21;
     --orange-accent: #ff5722;
 }
@@ -56,28 +57,34 @@ li a:hover {
     position: fixed;
     top: 0;
     left: 0;
-    height: 100%;
-    width: var(--sidebar-width);
+    width: 100%;
+    height: var(--sidebar-height);
     background: var(--dark-bg);
     z-index: 100;
-    transition: width 0.6s cubic-bezier(0.4, 0, 0.2, 1);
-    padding: 10px;
+    transition: height 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+    padding: 0 10px;
     overflow: hidden;
+    display: flex;
+    align-items: center;
 }
 
 .sidebar.close {
-    width: var(--sidebar-closed-width);
+    height: var(--sidebar-closed-width);
 }
 
 .sidebar .nav-links {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
     height: 100%;
-    padding: 30px 0 150px 0;
+    padding: 0;
+    width: 100%;
 }
 
 .sidebar .nav-links li {
     position: relative;
     list-style: none;
-    margin: 10px 0;
+    margin: 0 10px;
 }
 
 .sidebar .nav-links li a {
@@ -106,10 +113,8 @@ li a:hover {
     font-weight: bold;
     white-space: nowrap;
     opacity: 1;
-    position: absolute; 
-    left: 50px; 
+    margin-left: 8px;
     transition: opacity 0.3s ease;
-    z-index: 1;
 }
 
 .sidebar.close .link_name, 
@@ -132,12 +137,12 @@ li a:hover {
 }
 
 .content {
-    margin-left: var(--sidebar-width);
-    transition: margin-left 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+    margin-top: var(--sidebar-height);
+    transition: margin-top 0.6s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .sidebar.close ~ .content {
-    margin-left: var(--sidebar-closed-width);
+    margin-top: var(--sidebar-closed-width);
 }
 
 .toggle-btn {
