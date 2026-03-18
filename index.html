@@ -15,6 +15,47 @@
         Your browser does not support the video tag.
     </video>
 
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+<nav class="sidebar" id="sidebar">
+    
+    <ul class="nav-links">
+        <li>
+            <a href="#">
+                <i class='fas fa-th-large'></i>
+                <span class="link_name">Overview</span>
+            </a>
+        </li>
+        <li>
+            <a href="#">
+                <i class='fas fa-user-tie'></i>
+                <span class="link_name">Hire </span>
+            </a>
+        </li>
+
+        <div class="divider"></div>
+        <li>
+            <a href="#">
+                <i class='fas fa-plus-circle'></i>
+                <span class="link_name">Add </span>
+            </a>
+        </li>
+        <li>
+            <a href="#">
+                <i class='fas fa-box'></i>
+                <span class="link_name">Neker</span>
+            </a>
+        </li>
+
+        <li class="toggle-btn" onclick="toggleSidebar()">
+            <i class='fas fa-chevron-right' id="btn"></i>
+        </li>
+    </ul>
+</nav>
+
+<main class="content">
+    </main>
+
     <header>
         <h1>Kener Josué Sosa Rodríguez</h1>
         <p>Estudiante de Informática Empresarial | Especialista en Redes </p>
@@ -57,6 +98,27 @@
         <p><strong>UCR:</strong> Bachillerato en Informática Empresarial (En curso).</p>
         <p><strong>Idiomas:</strong> Español (Nativo) e Inglés (B2 - Intermedio Avanzado).</p>
     </section>
+
+    <script>
+    function toggleSidebar() {
+        const sidebar = document.getElementById("sidebar");
+        const btn = document.getElementById("btn");
+        
+        sidebar.classList.toggle("close");
+
+        sidebar.classList.toggle("open");
+        if(sidebar.classList.contains("open")){
+            btn.classList.replace("fa-chevron-right", "fa-chevron-left");
+        } else {
+            btn.classList.replace("fa-chevron-left", "fa-chevron-right");
+        }
+        if(sidebar.classList.contains("close")){
+            btn.classList.replace("fa-chevron-left", "fa-chevron-right");
+        } else {
+            btn.classList.replace("fa-chevron-right", "fa-chevron-left");
+        }
+    }
+</script>
 
 </body>
 
