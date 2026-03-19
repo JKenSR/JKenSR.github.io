@@ -1,119 +1,118 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Mi Portafolio</title>
+    <title>Portafolio | Kener Josué Sosa Rodriguez</title>
     <link rel="stylesheet" href="src/bar.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
-
 <body>
 
     <video class="video-background" autoplay muted loop playsinline>
         <source src="src/856882-hd_1920_1080_24fps.mp4" type="video/mp4">
-        Your browser does not support the video tag.
+        <img src="src/pexels-davidboca-5466506.jpg" alt="Fondo">
     </video>
 
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <nav class="sidebar" id="sidebar">
+        <ul class="nav-links">
+            <li><a href="#" onclick="show('inicio')"><i class='fas fa-home'></i><span class="link_name">Inicio</span></a></li>
+            <li><a href="#" onclick="show('perfil')"><i class='fas fa-user-tie'></i><span class="link_name">Perfil</span></a></li>
+            <li><a href="#" onclick="show('habilidades')"><i class='fas fa-code'></i><span class="link_name">Habilidades</span></a></li>
+            <li><a href="#" onclick="show('proyectos')"><i class='fas fa-project-diagram'></i><span class="link_name">Proyectos</span></a></li>
+            <li><a href="#" onclick="show('educacion')"><i class='fas fa-graduation-cap'></i><span class="link_name">Educación</span></a></li>
+            
+            <li class="toggle-btn" onclick="toggleSidebar()">
+                <i class='fas fa-chevron-up' id="btn"></i>
+            </li>
+        </ul>
+    </nav>
 
-<nav class="sidebar" id="sidebar">
-    
-    <ul class="nav-links">
-        <li>
-            <a href="#">
-                <i class='fas fa-user-tie'></i>
-                <span class="link_name">Perfil Profesional</span>
-            </a>
-        </li>
-        <li>
-            <a href="#">
-                <i class='fas fa-code'></i>
-                <span class="link_name">Habilidades </span>
-            </a>
-        </li>
+    <main>
+        <header id="inicio" class="content">
+            <h1>Kener Josué Sosa Rodriguez</h1>
+            <p><strong>Estudiante de Informática Empresarial | Especialista en Redes</strong></p>
+            <p><i class="fas fa-envelope"></i> Justkenersosa@gmail.com | <i class="fas fa-phone"></i> +506 61103785</p>
+            <p><i class="fas fa-map-marker-alt"></i> Liberia, Guanacaste</p>
+            <div style="margin-top: 20px;">
+                <a href="https://github.com/JKenSR" target="_blank" style="color: #ff5722; text-decoration: none; margin-right: 20px; font-weight: bold;">
+                    <i class="fab fa-github"></i> GitHub Personal
+                </a>
+                <a href="https://git.ucr.ac.cr/KENER.SOSA" target="_blank" style="color: #ff5722; text-decoration: none; font-weight: bold;">
+                    <i class="fab fa-git-alt"></i> Git UCR
+                </a>
+            </div>
+        </header>
 
-        <div class="divider"></div>
-        <li>
-            <a href="#">
-                <i class='fas fa-project-diagram'></i>
-                <span class="link_name">Proyectos </span>
-            </a>
-        </li>
-        <li>
-            <a href="#">
-                <i class='fas fa-graduation-cap'></i>
-                <span class="link_name">Educación</span>
-            </a>
-        </li>
+        <section id="perfil" class="content" style="display:none;">
+            <h2>Perfil Profesional</h2>
+            <p>Estudiante del Bachillerato en Informática Empresarial en la Universidad de Costa Rica, con sólidos conocimientos en programación, bases de datos y redes. Apasionado por la tecnología, la innovación y el aprendizaje continuo.</p>
+            <p style="margin-top: 10px;">Enfoque en la eficiencia, el trabajo en equipo y la mejora constante. Poseo facilidad para el aprendizaje y adaptación a entornos cambiantes.</p>
+        </section>
 
-        <li class="toggle-btn" onclick="toggleSidebar()">
-            <i class='fas fa-chevron-up' id="btn"></i>
-        </li>
-    </ul>
-</nav>
+        <section id="habilidades" class="content" style="display:none;">
+            <h2>Habilidades Técnicas</h2>
+            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 20px;">
+                <div>
+                    <h3>Software y Programación</h3>
+                    <ul>
+                        <li>SQL, Java (POO), JavaScript, C#, JSP, HTML, CSS.</li>
+                        <li>SQL Server, MySQL, PostgreSQL.</li>
+                        <li>Visual Studio, VS Code, Apache NetBeans.</li>
+                        <li>Git, GitHub, GitLab, Azure.</li>
+                    </ul>
+                </div>
+                <div>
+                    <h3>Redes y Sistemas</h3>
+                    <ul>
+                        <li>Configuración de Routers, LAN/WAN, Wireshark, Nmap.</li>
+                        <li>Packet Tracer, Shodan, Kali Linux.</li>
+                        <li>VMware Workstation Pro, VirtualBox.</li>
+                        <li>Windows (7 a 11), Linux (Ubuntu, Debian).</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
 
-<main class="content">
+        <section id="proyectos" class="content" style="display:none;">
+            <h2>Proyectos Destacados</h2>
+            <div style="margin-bottom: 20px;">
+                <h3>Sistema de Órdenes de Reparación – UCR</h3>
+                <p>Desarrollo de sistema web en C#/.NET con arquitectura en capas (BL, DA, DTOs, UI). Gestión de usuarios, roles, inventario e integración con Azure.</p>
+            </div>
+            <div>
+                <h3>Gestión Web con JSP</h3>
+                <p>Proyecto académico de desarrollo de aplicaciones web con bases de datos MySQL y gestión de usuarios.</p>
+            </div>
+        </section>
+
+        <section id="educacion" class="content" style="display:none;">
+            <h2>Educación e Idiomas</h2>
+            <ul>
+                <li><strong>Bachillerato en Informática Empresarial:</strong> Universidad de Costa Rica (En curso).</li>
+                <li><strong>Técnico en Redes y Sistemas:</strong> C.T.P Santa Rosa de Pocosol (2017-2022).</li>
+                <li><strong>Idiomas:</strong> Español (Nativo) e Inglés (B2 - Intermedio Avanzado).</li>
+            </ul>
+        </section>
     </main>
 
-    <header>
-        <h1>Kener Josué Sosa Rodríguez</h1>
-        <p>Estudiante de Informática Empresarial | Especialista en Redes </p>
-        <p>Liberia, Guanacaste | Justkenersosa@gmail.com </p>
-    </header>
-
-    <section id="sobre-mi">
-        <h2>Perfil Profesional</h2>
-        <p>
-            Estudiante del Bachillerato en Informática Empresarial en la Universidad de Costa Rica.
-            Apasionado por la tecnología, la innovación y el aprendizaje continuo, con enfoque en la eficiencia y el
-            trabajo en equipo.
-        </p>
-    </section>
-
-    <section id="habilidades">
-        <h2>Habilidades Técnicas</h2>
-        <ul>
-            <li><strong>Programación:</strong> Java, JavaScript, C#, SQL, HTML/CSS.</li>
-            <li><strong>Bases de Datos:</strong> SQL Server, MySQL, PostgreSQL.</li>
-            <li><strong>Redes y Seguridad:</strong> Configuración de routers, Wireshark, Nmap, Packet Tracer.</li>
-            <li><strong>Herramientas:</strong> Git, GitHub, Azure, Docker/VMware.</li>
-        </ul>
-    </section>
-
-    <section id="proyectos">
-        <h2>Proyectos Destacados</h2>
-        <div>
-            <h3>Sistema de Órdenes de Reparación (UCR)</h3>
-            <p>Desarrollo web en C#/.NET con arquitectura en capas e integración con Azure.</p>
-        </div>
-        <div>
-            <h3>Gestión Web con JSP</h3>
-            <p>Aplicación web con gestión de usuarios y bases de datos en MySQL.</p>
-        </div>
-    </section>
-
-    <section id="educacion">
-        <h2>Educación e Idiomas</h2>
-        <p><strong>UCR:</strong> Bachillerato en Informática Empresarial (En curso).</p>
-        <p><strong>Idiomas:</strong> Español (Nativo) e Inglés (B2 - Intermedio Avanzado).</p>
-    </section>
-
     <script>
-    function toggleSidebar() {
-        const sidebar = document.getElementById("sidebar");
-        const btn = document.getElementById("btn");
-        
-        sidebar.classList.toggle("close");
-
-        if(sidebar.classList.contains("close")){
-            btn.classList.replace("fa-chevron-left", "fa-chevron-right");
-        } else {
-            btn.classList.replace("fa-chevron-right", "fa-chevron-left");
+        function show(id) {
+            document.querySelectorAll('.content').forEach(s => s.style.display = 'none');
+            document.getElementById(id).style.display = 'block';
         }
-    }
-</script>
 
+        function toggleSidebar() {
+            const sidebar = document.getElementById("sidebar");
+            const btn = document.getElementById("btn");
+            sidebar.classList.toggle("close");
+            
+            if(sidebar.classList.contains("close")){
+                btn.classList.replace("fa-chevron-up", "fa-chevron-down");
+            } else {
+                btn.classList.replace("fa-chevron-down", "fa-chevron-up");
+            }
+        }
+    </script>
 </body>
-
 </html>

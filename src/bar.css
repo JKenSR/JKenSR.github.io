@@ -1,9 +1,27 @@
+/* --- VARIABLES --- */
+:root {
+  --sidebar-width: 100%;
+  --sidebar-closed-width: 40px;
+  --sidebar-height: 80px;
+  --dark-bg: #1e1e21;
+  --orange-accent: #ff5722;
+  --section-bg: #00000086; /* Tu opacidad original */
+}
+
+/* --- RESET & BOX MODEL --- */
+* {
+  box-sizing: border-box; /* Norma profe */
+  margin: 0;
+  padding: 0;
+}
+
 body {
   font-family: sans-serif;
   line-height: 1.6;
   max-width: 800px;
   margin: 0 auto;
-  padding: 80px 20px 0;
+  padding: 100px 20px 0; /* Espacio para la barra */
+  color: #fff;
 }
 
 .video-background {
@@ -16,16 +34,76 @@ body {
   z-index: -1;
 }
 
-header {
-  background: #00000086;
-  color: #fff;
-  padding: 1rem;
-  text-align: center;
-  border-radius: 8px;
+/* --- SIDEBAR CON NESTING --- */
+.sidebar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: var(--sidebar-width);
+  height: var(--sidebar-height);
+  background: var(--dark-bg);
+  z-index: 100;
+  transition: height 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+  padding: 0 10px;
+  overflow: hidden; /* Norma profe: Gestionar desbordamiento */
+  display: flex;
+  align-items: center;
+
+  /* Cuando está cerrada */
+  &.close {
+    height: var(--sidebar-closed-width);
+
+    /* Ocultar textos y badges al cerrar */
+    .link_name, .section-title, .badge {
+      opacity: 0;
+      pointer-events: none;
+    }
+  }
+
+  .nav-links {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    height: 100%;
+    width: 100%;
+    list-style: none;
+
+    li {
+      margin: 0 10px;
+      
+      a {
+        display: flex;
+        align-items: center;
+        text-decoration: none;
+        padding: 10px;
+        height: 50px;
+        color: white;
+
+        &:hover {
+          background-color: #555555;
+          border-radius: 4px;
+        }
+
+        i {
+          min-width: 25px;
+          font-size: 18px;
+        }
+      }
+    }
+  }
+
+  .link_name {
+    font-size: 15px;
+    font-weight: bold;
+    white-space: nowrap;
+    margin-left: 8px;
+    transition: opacity 0.3s ease; /* Tu transición de opacidad */
+  }
 }
 
-section {
-  background: #00000086;
+/* --- CONTENIDO --- */
+header, section {
+  background: var(--section-bg);
   color: #fff;
   padding: 20px;
   margin-top: 20px;
@@ -33,123 +111,8 @@ section {
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
 }
 
-li a {
-  display: block;
-  color: black;
-  padding: 8px 16px;
-  text-decoration: none;
-}
-
-li a:hover {
-  background-color: #555555;
-  color: white;
-}
-
-:root {
-    --sidebar-width: 100%;
-    --sidebar-closed-width: 40px;
-    --sidebar-height: 80px;
-    --dark-bg: #1e1e21;
-    --orange-accent: #ff5722;
-}
-
-.sidebar {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: var(--sidebar-height);
-    background: var(--dark-bg);
-    z-index: 100;
-    transition: height 0.6s cubic-bezier(0.4, 0, 0.2, 1);
-    padding: 0 10px;
-    overflow: hidden;
-    display: flex;
-    align-items: center;
-}
-
-.sidebar.close {
-    height: var(--sidebar-closed-width);
-}
-
-.sidebar .nav-links {
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    height: 100%;
-    padding: 0;
-    width: 100%;
-}
-
-.sidebar .nav-links li {
-    position: relative;
-    list-style: none;
-    margin: 0 10px;
-}
-
-.sidebar .nav-links li a {
-    display: flex;
-    align-items: center;
-    text-decoration: none;
-    padding: 10px;
-    position: relative; 
-    height: 50px;
-}
-
-.sidebar .nav-links li i {
-    height: 50px;
-    min-width: 25px;
-    text-align: left;
-    margin-left: 5px;
-    line-height: 50px;
-    color: #ffffff;
-    font-size: 18px;
-    z-index: 2; 
-}
-
-.sidebar .link_name, .sidebar .section-title {
-    color: #ffffff;
-    font-size: 15px;
-    font-weight: bold;
-    white-space: nowrap;
-    opacity: 1;
-    margin-left: 8px;
-    transition: opacity 0.3s ease;
-}
-
-.sidebar.close .link_name, 
-.sidebar.close .section-title,
-.sidebar.close .badge {
-    opacity: 0;
-    pointer-events: none;
-}
-
-.badge {
-    position: absolute;
-    right: 10px;
-    background: var(--orange-accent);
-    color: rgb(255, 255, 255);
-    padding: 2px 8px;
-    border-radius: 50%;
-    font-size: 12px;
-    opacity: 1;
-    transition: opacity 0.3s ease;
-}
-
-.content {
-    margin-top: var(--sidebar-height);
-    transition: margin-top 0.6s cubic-bezier(0.4, 0, 0.2, 1);
-}
-
-.sidebar.close ~ .content {
-    margin-top: var(--sidebar-closed-width);
-}
-
 .toggle-btn {
-    cursor: pointer;
-    text-align: center;
-    color: rgb(255, 255, 255);
-    margin-top: 20px;
-    position: relative;
-    z-index: 2;
+  cursor: pointer;
+  margin-left: auto; /* Empuja el botón a la derecha */
+  color: white;
 }
